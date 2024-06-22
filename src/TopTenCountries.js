@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-function TopTenCountries({countries, setCountries, places}) {
-    const [showMore, setShowMore] = useState(false);
+function TopTenCountries({countries, setCountries}) {
+    const [showText, setShowText] = useState(false);
 
     const removeCountry = (id) => {
         let newCountries = countries.filter(element => element.id !== id);
@@ -9,8 +9,8 @@ function TopTenCountries({countries, setCountries, places}) {
     }
     
     const showTextClick = (country) => {
-        country.showMore = !showMore;
-        setShowMore(!showMore);
+        country.showMore = !country.showMore;
+        setShowText(!showText);
     }
 
     return(
